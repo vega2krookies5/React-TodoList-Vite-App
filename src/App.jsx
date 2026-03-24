@@ -42,6 +42,20 @@ class App extends Component {
     }
   };
 
+  handleToggle = (id) => {
+    const { todos } = this.state;
+    this.setState({
+      todos: todos.map(todo => todo.id === id ? { ...todo, checked: !todo.checked } : todo)
+    });
+  }; //handleToggle
+
+  handleRemove = (id) => {
+    const { todos } = this.state;
+    this.setState({
+      todos: todos.filter(todo => todo.id !== id)
+    });
+  }; //handleRemove
+  
   render() {
     console.log('App컴포넌트 render() 함수 호출됨!');
     const { todo, todos } = this.state;
