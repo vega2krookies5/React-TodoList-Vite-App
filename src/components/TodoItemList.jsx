@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 
 class TodoItemList extends Component {
     /*
-        true 리턴 (myTodos 변수에 변동이 있는 경우)이면 render() 함수가 호출됨
-        false 리턴 (myTodos 변수에 변동이 없는 경우)이면 render() 함수가 호출되지 않음(렌더링 생략)
+        라이프사이클 메서드
+        shouldComponentUpdate(nextProps, nextState) 함수는 렌더링 생략 여부를 결정하는 bool 값을 리턴함
+        true 리턴 (todosArr 변수에 변동이 있는 경우(같지 않으면))면 render() 함수가 호출됨
+        false 리턴 (todosArr 변수에 변동이 없는 경우(같으면))면 render() 함수가 호출되지 않음(렌더링 생략)
     */
     shouldComponentUpdate(nextProps, nextState) {
         return this.props.todosArr !== nextProps.todosArr;
