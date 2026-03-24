@@ -44,7 +44,7 @@ class App extends Component {
 
   render() {
     console.log('App컴포넌트 render() 함수 호출됨!');
-    const { todo } = this.state;
+    const { todo, todos } = this.state;
     const { handleChange, handleCreate, handleEnter } = this;
 
     return (
@@ -55,7 +55,7 @@ class App extends Component {
         myChange={handleChange}
         myCreate={handleCreate} />
       }>
-        <TodoItemList />
+        <TodoItemList todoList={todos} />
       </TodoListTemplate>
     );
   } //render
