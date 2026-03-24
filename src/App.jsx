@@ -55,7 +55,7 @@ class App extends Component {
         myChange={handleChange}
         myCreate={handleCreate} />
       }>
-        <TodoItemList todoList={todos} />
+        <TodoItemList todosArr={todos} />
       </TodoListTemplate>
     );
   } //render
