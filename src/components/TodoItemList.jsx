@@ -10,6 +10,8 @@ class TodoItemList extends Component {
                 text={text} 
                 checked={checked} 
                 key={id}
+                onToggle={myToggle}
+                onRemove={myRemove}
             />
         ));
 
