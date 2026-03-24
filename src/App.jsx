@@ -55,11 +55,11 @@ class App extends Component {
       todos: todos.filter(todo => todo.id !== id)
     });
   }; //handleRemove
-  
+
   render() {
     console.log('App컴포넌트 render() 함수 호출됨!');
     const { todo, todos } = this.state;
-    const { handleChange, handleCreate, handleEnter } = this;
+    const { handleChange, handleCreate, handleEnter, handleToggle, handleRemove } = this;
 
     return (
       <TodoListTemplate form=
@@ -69,7 +69,9 @@ class App extends Component {
         myChange={handleChange}
         myCreate={handleCreate} />
       }>
-        <TodoItemList todosArr={todos} />
+        <TodoItemList todosArr={todos} 
+          myToggle={handleToggle} 
+          myRemove={handleRemove} />
       </TodoListTemplate>
     );
   } //render
